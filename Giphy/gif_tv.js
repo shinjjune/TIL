@@ -1,4 +1,7 @@
-const contents = ["cat", "happy", "ah", "kim"];
+// contents를 찾아서 3초 마다 돌아가면서 보여주면 됩니다.
+// setInterval
+
+const contents = ["coffee", "water", "doll"];
 const keyword = contents[Math.floor(Math.random() * contents.length)];
 
 function searchTV(keyword) {
@@ -28,9 +31,6 @@ function pushToTvDOM(parsedData) {
     tvArea.innerHTML = `<img src="${imgURL}" class="img-center"/>`;
     i++;
     if (i >= dataSet.length) i = 0;
-  }, 3000);
+  }, 2000);
 }
 document.addEventListener("DOMContentLoaded", searchTV);
-
-// contents를 찾아서 3초 마다 돌아가면서 보여주면 됩니다.
-// setInterval
