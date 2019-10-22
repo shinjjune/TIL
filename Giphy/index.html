@@ -4,42 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+    <title>Giphy Search Engine</title>
   </head>
   <body>
-    <h1 id="hphk">Happy Hacking!</h1>
-    <h2 id="visitor"></h2>
-    <div>
-      <a href="#" id="who-button">who said what?</a>
-      <span id="answerer"></span>
-    </div>
-    <div>
-      <span id="counter">0</span>
-      <button id="counter-plus-button">plus</button>
-      <button id="counter-minus-button">minus</button>
-      <button id="counter-button">Plus</button>
-    </div>
-    <script>
-      //   alert("ooooooooooooooooo");
-      const visitor = prompt("whowhowhwohwowhowhowhw");
-      const whoVisit = document.querySelector("#visitor");
-      if (visitor == "sjh") {
-        whoVisit.innerHTML = visitor + "님 어서오세요";
-      } else {
-        whoVisit.innerHTML = "꺼지세요";
-      }
-      const whoButton = document.querySelector("#who-button");
-      whoButton.addEventListener("click", function() {
-        document.querySelector("#answerer").innerHTML = visitor;
-      });
+    <!-- TV 창 -->
+    <div class="tv" id="js-tv-area"></div>
 
-      let number = 0;
-      const counter = document.querySelector("#counter");
-      const plusBtn = documnet.querySelector("#counter-plus-button");
-      plusBtn.addEventListener("click", function() {
-        number++;
-        counter.innerHTML = number;
-      });
-    </script>
+    <!-- 검색창 -->
+    <div class="container container-padding50">
+      <input type="text" id="js-input" class="container-textinput" />
+      <button id="js-button" class="container-button">Search</button>
+    </div>
+
+    <!-- 결과창 -->
+    <div
+      id="result-area"
+      class="container container-padding50 image-grid"
+    ></div>
+    <script src="./main.js"></script>
+    <script src="./gif_tv.js"></script>
   </body>
 </html>

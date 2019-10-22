@@ -17,7 +17,7 @@
       <span id="counter">0</span>
       <button id="counter-plus-button">plus</button>
       <button id="counter-minus-button">minus</button>
-      <button id="counter-button">Plus</button>
+      <button id="counter-reset-button">reset</button>
     </div>
     <script>
       //   alert("ooooooooooooooooo");
@@ -38,6 +38,16 @@
       const plusBtn = document.querySelector("#counter-plus-button");
       plusBtn.addEventListener("click", function() {
         number++;
+        counter.innerHTML = number;
+      });
+      const minusBtn = document.querySelector("#counter-minus-button");
+      minusBtn.addEventListener("click", function() {
+        number--;
+        counter.innerHTML = number;
+      });
+      const resetBtn = document.querySelector("#counter-reset-button");
+      resetBtn.addEventListener("click", function() {
+        number = 0;
         counter.innerHTML = number;
       });
     </script>
