@@ -83,6 +83,7 @@ const SoundCloudAPI = {
     });
   }
 };
+
 const UI = {
   inputArea: document.querySelector("#js-search-input"),
   sidebar: document.querySelector("#js-playlist"),
