@@ -9,10 +9,11 @@ const SearchBar = ({ handleKeywordChange, handleChecked }) => {
         onChange={e => handleKeywordChange(e.target.value)}
       />
       <p>
-        <input type="checkbox" onchange={handleChecked} /> Only show products in
+        <input type="checkbox" onChange={handleChecked} /> Only show products in
         stock
       </p>
     </form>
   );
 };
+
 export default SearchBar;

@@ -1,9 +1,14 @@
 import React from "react";
 
 const ProductRow = props => {
+  const loweredName = props.name.toLowerCase();
+  const loweredKeyword = props.keyword.toLowerCase();
+  if (props.checked && !props.stocked) return null;
+  if (!loweredName.includes(loweredKeyword)) return null;
+  //   if (!new RegExp(`/${props.name}/i`).test(props.keyword)) return null;
   return (
-    <tr style={{ color: !props.stocked && "red" }}>
-      <td>{props.name}</td>
+    <tr>
+      <td style={{ color: !props.stocked && "red" }}>{props.name}</td>
       <td>{props.price}</td>
     </tr>
   );
