@@ -50,7 +50,7 @@ class App extends React.Component {
     const res = await axios.get(url);
     const { data } = res; //const data = res.data;
     data.sort((aa, bb) => {
-      return aa.category < bb.category ? -2 : 2;
+      return aa.category < bb.category ? -1 : 1;
     });
     this.setState({ data }); //this.setState({data:data})
   }
