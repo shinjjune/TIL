@@ -27,13 +27,8 @@ const Current = props => {
           <StateIcon icon={weather[0].icon} />
           <p className="temperature">
             {unit === "C"
-<<<<<<< HEAD
               ? Math.round(main.temp)
               : Math.round((main.temp * 9) / 5 + 32)}
-=======
-              ? Math.round(main.temp, -2)
-              : Math.round((main.temp * 9) / 5 + 32, -2)}
->>>>>>> 52cf130397086d7ec76e815754a88962c83df206
           </p>
           <section className="units">
             <span
