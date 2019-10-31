@@ -7,7 +7,6 @@ const Current = props => {
   const { unit, setUnit } = props;
   const time = new Date(dt * 1000);
   const day = ["일", "월", "화", "수", "목", "금", "토"];
-
   const changeUnit = () => {
     setUnit(unit === "C" ? "F" : "C");
   };
@@ -28,8 +27,8 @@ const Current = props => {
           <StateIcon icon={weather[0].icon} />
           <p className="temperature">
             {unit === "C"
-              ? (Math.round(main.temp), 3)
-              : Math.round((main.temp * 9) / 5 + 32)}
+              ? Math.round(main.temp, -2)
+              : Math.round((main.temp * 9) / 5 + 32, -2)}
           </p>
           <section className="units">
             <span
@@ -38,7 +37,7 @@ const Current = props => {
             >
               °C
             </span>
-            <span>|</span>
+
             <span
               className={unit === "F" ? null : "clickable"}
               onClick={unit === "F" ? null : changeUnit}
