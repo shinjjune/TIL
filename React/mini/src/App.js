@@ -15,6 +15,7 @@ class App extends Component {
           author={articles.author}
           title={articles.title}
           url={articles.url}
+          source={articles.source}
         />
       );
     });

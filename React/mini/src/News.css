@@ -2,13 +2,14 @@
   font-size: 15px;
   display: flex;
   justify-content: center;
-  color: brown;
+  color: rgb(43, 9, 9);
 }
 
 .url {
   font-size: 8px;
   display: flex;
   justify-content: center;
+  color: rgb(189, 185, 185);
 }
 .table {
   margin: auto;
