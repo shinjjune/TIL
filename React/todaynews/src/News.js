@@ -18,15 +18,11 @@ function News({ title, url, source, urlToImage, description }) {
             />
           </th>
           <th className="title">
-            <a href={url}>[{title}]</a>
+            <a href={url} target="_blank">
+              [{title}]
+            </a>
           </th>
           <th className="description">{description}</th>
-          {/* <th className="url">
-            기사 원문 URL:
-            <a href={url} target="_blank">
-              {url}
-            </a>
-          </th> */}
         </tr>
       </tbody>
     </table>

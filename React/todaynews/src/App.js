@@ -53,6 +53,15 @@ class App extends Component {
               timezone={"kr"}
             />
           </div>
+          <select id="country" onchange="alert(this.value)">
+            <option id="0" value="kr">
+              kr
+            </option>
+            <option id="1" value="us">
+              us
+            </option>
+          </select>
+          {/* 타이틀과 로딩중... */}
           <header className="header-padding">TODAY NEWS</header>
           <main className="container">
             <div className={news ? "App" : "App-loading"}>
