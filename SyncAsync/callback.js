@@ -12,7 +12,7 @@ const userCallback = getUserCallback(1, user => {
   });
   console.log("user: ", user);
 });
-console.log(user);
+console.log(user, "??");
 console.log("코드끝!");
 
 const users = [{ id: 1, githubID: "auba" }, { id: 2, githubID: "laca" }];

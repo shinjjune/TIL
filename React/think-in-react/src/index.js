@@ -55,6 +55,7 @@ class App extends React.Component {
     this.setState({ data }); //this.setState({data:data})
   }
   componentDidMount() {
+    console.log("compo");
     // API를 찔러서 데이터를 가져오는 일을 할 겁니다.
     const url = "https://frozen-ocean-08299.herokuapp.com";
     this.getData(url);
@@ -67,6 +68,7 @@ class App extends React.Component {
     this.setState({ checked: !this.state.checked });
   };
   render() {
+    console.log("rend");
     return (
       <>
         <SearchBar
