@@ -92,7 +92,13 @@ async function update() {
 }
 async function update2() {
   //updateOne과 updateMany
-  const updated = await Course.updateMany({ isPublished: true }, { price: 15 });
-  console.log(updated);
+  const updated = await Course.updateMany({ isPublished: true }, { price: 15 }); //{조건},{바꿀 값}
+  // console.log(updated);
 }
-update2();
+// update2();
+// DELETE==> remove
+async function remove() {
+  const deleted = await Course.deleteOne({ _id: "5dc259a82d2fb32face3a313" });
+  console.log(deleted);
+}
+remove();
