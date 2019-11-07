@@ -16,19 +16,19 @@ const Course = mongoose.model("Course", schema);
 async function read() {
   const courses = await Course.find({ isPublished: true })
     .where("tags")
-    .in(["backend"])
-    .sort({ name: 1 })
-    .select({ name: 1, author: 1 });
+    .in(["backend"]) // backend 항목만 선택
+    .sort({ name: 1 }) // name 오름차순
+    .select({ name: 1, author: 1 }); // name과 author 추출
   console.log("실습:1", courses);
   const courses2 = await Course.find({ isPublished: true })
-    .or([{ tags: "frontend" }, { tags: "backend" }]) // tags:["fronted","backend"] 두개 다 있는것
-    .sort({ price: -1 })
-    .select({ name: 1, price: 1 });
+    .or([{ tags: "frontend" }, { tags: "backend" }]) // backend또는 frontend 항목선택 cf)tags:["fronted","backend"] 두개 다 있는것
+    .sort({ price: -1 }) // price 내림차순
+    .select({ name: 1, price: 1 }); // name과 price 추출
   console.log("실습2:", courses2);
   const courses3 = await Course.find()
     .where("price")
-    .gte(15)
-    .where("name")
+    .gte(15) // price 15이상이거나
+    .where("name") // name js/i 대소문자 구별 x
     .regex(/js/i);
   console.log("실습3:", courses3);
 }
