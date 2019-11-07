@@ -47,6 +47,9 @@ async function create() {
   const courseSaveResult = await course.save();
   console.log(courseSaveResult);
 }
+// create();
+
+// READ
 async function read() {
   const authors = await Author.find();
   console.log(authors);
@@ -76,4 +79,20 @@ async function read() {
     .sort("-name")
     .select("name tags price");
 }
-read();
+// read();
+
+// UPDATE
+// 1. 데이터를 조회해서 수정한 후 저장
+// 2. 바로 수정하는 방법
+async function update() {
+  // 첫번째 방법
+  const course = await Course.findById("5dc2578d43d3772948bceed9"); // 찾아서
+  course.name = "JSON ARRAY"; // 이걸로 바꿀거야
+  await course.save(); //저장
+}
+async function update2() {
+  //updateOne과 updateMany
+  const updated = await Course.updateMany({ isPublished: true }, { price: 15 });
+  console.log(updated);
+}
+update2();
