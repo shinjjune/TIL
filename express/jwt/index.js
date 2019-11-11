@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
-  const user = users.find(u => u.email === email && u.password === password);
+  const user = users.find(u => u.email === email && u.password === password); // email, password를 입력하세요
   if (!user) {
     res.json({ error: "Check your email or password" });
     return;
