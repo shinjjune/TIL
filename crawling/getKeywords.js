@@ -14,7 +14,8 @@ const getTitles = html => {
   const $ = cheerio.load(html.data);
   const $bodyList = $("div.tit").children("a.link");
   const titleList = [];
-  $bodyList.each(i => {
+  $bodyList.each(function(i) {
+    // 화살표 함수 x, function으로 쓰자
     titleList[i] = $(this).text();
   });
   return titleList;
@@ -22,5 +23,20 @@ const getTitles = html => {
 (async () => {
   const html = await getHTML();
   const titles = getTitles(html);
-  console.log(titles);
+  const map = {};
+  //  console.log(titles);
+  titles.forEach(title => {
+    const spread = title.split(" ");
+    spread.forEach(word => {
+      if (!map[word]) map[word] = 1;
+      else map[word] = map[word] + 1;
+    });
+  });
+  const sorted = [];
+  for (const word in map) {
+    const count = map[word];
+    sorted.push({ word, count });
+  }
+  sorted.sort((a, b) => b.count - a.count);
+  console.log(sorted);
 })();
