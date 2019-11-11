@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const getHTML = async url => {
   try {
     return await axios.get(
-      "https://search.shopping.naver.com/search/all.nhn?query=%EB%82%A8%EC%9E%90+%EC%98%B7&cat_id=&frm=NVSHATC"
+      "https://sports.news.naver.com/wfootball/news/index.nhn?isphoto=N"
     );
   } catch (e) {
     console.error(e);
@@ -12,7 +12,7 @@ const getHTML = async url => {
 };
 const getTitles = html => {
   const $ = cheerio.load(html.data);
-  const $bodyList = $("div.tit").children("a.link");
+  const $bodyList = $("div.text").children("a.title");
   const titleList = [];
   $bodyList.each(function(i) {
     // 화살표 함수 x, function으로 쓰자
