@@ -1,0 +1,4 @@
+1. yarn init -y
+2. yarn add express
+3. touch index.js
+4. mkdir public
