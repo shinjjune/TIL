@@ -54,7 +54,7 @@ app.post("/user/join", async (req, res, next) => {
 
 app.get("/user", async (req, res, next) => {
   const idToken = req.header("Authorization");
-  const Client = new OAuth2Client(
+  const client = new OAuth2Client(
     "970533117577-fvqpsvlm0rlq8nkf1fo7736vmabrk61a.apps.googleusercontent.com"
   );
   try {
