@@ -20,7 +20,7 @@
     로그인 페이지
     <hr>
     <form>
-    ID: <input type="text" name="id" size=15 value="id를 입력하세요" /><br>
+    ID: <input type="text" name="id" size=15 placeholder="id를 입력하세요" /><br>
     PW: <input type="password" name="passwd" id="p" size=15 /> <hr>
     <input type="submit" value="로그인" /> <input type="reset" value="입력취소" />
     <hr>
@@ -28,8 +28,22 @@
     <hr>
     <a href="https://www.naver.com" target="_blank">
     <button type="button" onclick="alert('네이버로갑니다.')">네이버</button>
-    
     </a>
+    방명록 작성하기<hr>
+    <textarea rows="5" cols="50" name="memo">
+        아무말이나 쓰세요~~
+    </textarea><hr>
+    <button type="submit"> 저장 </button>
+    <button type="reset"> 지우기 </button>
+    </form>
+    <form>
+        <fieldset>
+        <legend>입력 필드</legend>
+        날짜: <input type="date" name="mday"/><br>
+        시간: <input type="time" name="mtime"/><br>
+        검색어 입력 : <input type="search" name="keyword" /><br>
+        나이: <input type="number" min="0" max="99" step="1" value="20" />
+    </fieldset>
     </form>
 </body>
 </html>
