@@ -1,0 +1,11 @@
+{
+  "name": "node-acution",
+  "version": "0.0.1",
+  "description": "acution system",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon app"
+  },
+  "author": "shinjjune",
+  "license": "ISC"
+}
